@@ -1,0 +1,50 @@
+@use 'fonts';
+@use "sass:map";
+
+$accents: (
+	'100': #adb6ff,
+	'200': #99a3ff,
+	'300': #8591ff,
+	'400': #707eff,
+	'500': #5465ff,
+	'600': #475aff,
+	'700': #3347ff,
+	'800': #1f35ff,
+	'900': #0a23ff,
+);
+$text-light: #ffffff;
+
+body {
+	font-family: 'Inter', sans-serif;
+	background: #fff6ee;
+	margin: 0;
+	padding: 2em 5em;
+}
+
+@mixin setColor($property, $collection, $color) {
+	#{$property}: map.get($collection, $color);
+}
+
+.button {
+	cursor: pointer;
+	font-family: inherit;
+	font-weight: bold;
+	color: $text-light;
+	border: 0;
+	border-radius: 0.25em;
+	font-size: 1.5em;
+	padding: 0.5em;
+	box-sizing: border-box;
+	box-shadow: -15px 15px 20px rgba(246, 208, 167, 0.5),
+		15px -15px 20px rgb(255, 255, 255);
+
+	&.accent {
+		@include setColor('background', $accents, '500');
+		&:hover {
+			@include setColor('background', $accents, '600');
+		}
+		&:active {
+			@include setColor('background', $accents, '700');
+		}
+	}
+}
