@@ -17,6 +17,20 @@ export default extendTheme({
 			800: '#1f35ff',
 			900: '#0a23ff',
 		},
+		brand__brown: {
+			30: '#dbc2bd',
+			40: '#d4b6af',
+			50: '#cda9a2',
+			100: '#bf9188',
+			200: '#b8847a',
+			300: '#b0776d',
+			400: '#a96b60',
+			500: '#9f6156',
+			600: '#92594f',
+			700: '#855147',
+			800: '#774940',
+			900: '#6a4139',
+		},
 	},
 	components: {
 		Button: {
@@ -31,5 +45,9 @@ export default extendTheme({
 				},
 			},
 		},
+	},
+	shadows: {
+		brown__xl:
+			'0 20px 25px -5px rgba(106, 65, 57, 0.1), 0 10px 10px -5px rgba(106, 65, 57, 0.04)',
 	},
 });

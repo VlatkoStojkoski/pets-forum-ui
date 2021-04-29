@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { FC } from 'react';
 import { Icon, IconProps } from '@chakra-ui/react';
 
-const Dog = (props: IconProps) => {
+export const Dog: FC<IconProps> = (props) => {
 	return (
 		<Icon viewBox='0 0 168.315 149.312' {...props}>
 			<g id='dog' transform='translate(0 -28.903)'>
@@ -141,5 +141,3 @@ const Dog = (props: IconProps) => {
 		</Icon>
 	);
 };
-
-export { Dog };

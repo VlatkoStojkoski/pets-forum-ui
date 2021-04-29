@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { FC } from 'react';
 import { Icon, IconProps } from '@chakra-ui/react';
 
-const Magnifier = (props: IconProps) => {
+export const Magnifier: FC<IconProps> = (props) => {
 	return (
 		<Icon viewBox='0 0 297.978 297.464' {...props}>
 			<g id='magnifier' transform='translate(12.786 -8.214)'>
@@ -25,5 +25,3 @@ const Magnifier = (props: IconProps) => {
 		</Icon>
 	);
 };
-
-export { Magnifier };
