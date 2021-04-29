@@ -6,7 +6,17 @@ import { Brand } from 'icons';
 
 export const NavigationBar: FC = () => {
 	return (
-		<Flex px={7} py={3} top={0} pos='sticky' w='100%' h='max-content'>
+		<Flex
+			px={7}
+			py={3}
+			top={0}
+			pos='sticky'
+			w='100%'
+			h='max-content'
+			bgColor='rgba(255, 255, 255, .15)'
+			zIndex={9999}
+			sx={{ backdropFilter: 'blur(5px)', zIndex: '9999' }}
+		>
 			<Link to='/' style={{ display: 'inline-block' }}>
 				<Flex alignItems='center' gridColumnGap={2.5} w='fit-content'>
 					<Brand boxSize='36px' />
