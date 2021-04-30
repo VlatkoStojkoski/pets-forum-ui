@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
 import { Link } from 'react-router-dom';
-import { Box, Flex, Heading } from '@chakra-ui/react';
+import { Flex, Heading } from '@chakra-ui/react';
 
 import { Brand } from 'icons';
 
@@ -15,7 +15,7 @@ export const NavigationBar: FC = () => {
 			h='max-content'
 			bgColor='rgba(255, 255, 255, .15)'
 			zIndex={9999}
-			sx={{ backdropFilter: 'blur(5px)', zIndex: '9999' }}
+			sx={{ backdropFilter: 'blur(5px)' }}
 		>
 			<Link to='/' style={{ display: 'inline-block' }}>
 				<Flex alignItems='center' gridColumnGap={2.5} w='fit-content'>

@@ -6,9 +6,9 @@ import { NavigationBar } from 'layout';
 
 const App: FC = () => {
 	return (
-		<Box bg='#fff6ee' minH='100vh' w='100%'>
+		<Box bg='bg' minH='100vh' minW='100%'>
 			<NavigationBar />
-			<Box py={10}>
+			<Box py={5}>
 				<Routes />
 			</Box>
 		</Box>

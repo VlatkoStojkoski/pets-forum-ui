@@ -1,11 +1,21 @@
 import { extendTheme } from '@chakra-ui/react';
+import { createBreakpoints } from '@chakra-ui/theme-tools';
 
 export default extendTheme({
+	breakpoints: createBreakpoints({
+		xs: '25em',
+		sm: '30em',
+		md: '48em',
+		lg: '62em',
+		xl: '80em',
+		'2xl': '96em',
+	}),
 	fonts: {
 		heading: 'Inter',
 		body: 'Inter',
 	},
 	colors: {
+		bg: '#fff6ee',
 		accent: {
 			100: '#adb6ff',
 			200: '#99a3ff',
