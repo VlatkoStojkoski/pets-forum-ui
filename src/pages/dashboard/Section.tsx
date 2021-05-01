@@ -1,4 +1,4 @@
-import React, { FC, ReactNode, useEffect } from 'react';
+import React, { FC, ReactNode } from 'react';
 import {
 	Box,
 	Heading,
@@ -15,11 +15,7 @@ export interface SectionProps {
 }
 
 export const Section: FC<SectionProps> = ({ title, icon, children }) => {
-	const { isOpen, onToggle } = useDisclosure();
-
-	useEffect(() => {
-		if (!isOpen) onToggle();
-	}, []);
+	const { isOpen, onToggle } = useDisclosure({ defaultIsOpen: true });
 
 	return (
 		<>
@@ -60,7 +56,6 @@ export const Section: FC<SectionProps> = ({ title, icon, children }) => {
 				style={{
 					padding: '50px',
 					margin: '-50px',
-					width: '100vw',
 				}}
 			>
 				{children}

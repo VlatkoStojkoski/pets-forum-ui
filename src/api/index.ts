@@ -24,3 +24,53 @@ export const signIn = async (user: SignInParameters) => {
 
 	return user;
 };
+
+export interface ForumPostsQuery {
+	limit: number;
+}
+
+export interface ForumPostProperties {
+	title: string;
+	likes: number;
+	author: {
+		displayName: string;
+		username: string;
+		avatar: string;
+	};
+	date: Date;
+	type: 'image' | 'video' | 'text';
+	keywords: string[];
+	content: string;
+}
+
+const randomPost = async (): Promise<ForumPostProperties> => {
+	await timeoutPromise(500);
+
+	return {
+		title: 'Наслов',
+		likes: Math.floor(Math.random() * 6969),
+		author: {
+			displayName: 'Марта Стојкоска',
+			username: 'super_martha_69',
+			avatar: `https://i.pravatar.cc/128?u=${Math.floor(
+				Math.random() * 999999
+			)}`,
+		},
+		date: new Date(),
+		type: 'text',
+		keywords: ['key1', 'word2', 'lol1'],
+		content:
+			'lorem ipsum dolor1 sit amet. lorem ipsum dolor sit amet. lorem ipsum dolor sit amet. lorem ipsum dolor sit amet. lorem ipsum dolor sit amet. lorem ipsum dolor sit amet. lorem ipsum dolor sit amet. lorem ipsum dolor sit amet.lorem ipsum dolor sit amet. lorem ipsum dolor sit amet. lorem ipsum dolor sit amet. lorem ipsum dolor sit amet. lorem ipsum dolor sit amet. lorem ipsum dolor sit amet. lorem ipsum dolor sit amet.',
+	};
+};
+
+export const getForumPosts = async ({
+	limit,
+	...query
+}: ForumPostsQuery): Promise<ForumPostProperties[]> => {
+	await timeoutPromise(500);
+
+	return await Promise.all(
+		Array.from({ length: limit }, async () => await randomPost())
+	);
+};

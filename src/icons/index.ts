@@ -8,3 +8,5 @@ export * from './Poison';
 export * from './PawEmergency';
 export * from './Rocket';
 export * from './Person';
+export * from './HotIcon';
+export * from './PawLike';
