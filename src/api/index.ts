@@ -52,7 +52,7 @@ const randomPost = async (): Promise<ForumPostProperties> => {
 		author: {
 			displayName: 'Марта Стојкоска',
 			username: 'super_martha_69',
-			avatar: `https://i.pravatar.cc/128?u=${Math.floor(
+			avatar: `https://i.pravatar.cc/64?u=${Math.floor(
 				Math.random() * 999999
 			)}`,
 		},
@@ -64,10 +64,9 @@ const randomPost = async (): Promise<ForumPostProperties> => {
 	};
 };
 
-export const getForumPosts = async ({
-	limit,
-	...query
-}: ForumPostsQuery): Promise<ForumPostProperties[]> => {
+export const getForumPosts = async (
+	{ limit = 20 }: ForumPostsQuery = { limit: 20 }
+): Promise<ForumPostProperties[]> => {
 	await timeoutPromise(500);
 
 	return await Promise.all(

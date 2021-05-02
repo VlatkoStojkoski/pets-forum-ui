@@ -12,8 +12,7 @@ export const HotPosts: FC = () => {
 
 	useEffect(() => {
 		(async () => {
-			const feedArr = await getForumPosts({ limit: 3 });
-			console.log(feedArr);
+			const feedArr = await getForumPosts({ limit: 2 });
 			setFeed(feedArr);
 		})();
 	}, []);

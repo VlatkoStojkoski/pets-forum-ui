@@ -15,7 +15,7 @@ export const NavigationBar: FC = () => {
 			h='max-content'
 			bgColor='rgba(255, 255, 255, .15)'
 			zIndex={9999}
-			sx={{ backdropFilter: 'blur(5px)' }}
+			sx={{ backdropFilter: 'blur(15px)' }}
 		>
 			<Link to='/' style={{ display: 'inline-block' }}>
 				<Flex alignItems='center' gridColumnGap={2.5} w='fit-content'>
