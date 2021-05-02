@@ -8,7 +8,9 @@ export interface SignUpParameters {
 	password: string;
 }
 
-export const signUp = async (newUser: SignUpParameters) => {
+export const signUp = async (
+	newUser: SignUpParameters
+): Promise<SignUpParameters> => {
 	await timeoutPromise(2000);
 
 	return newUser;
@@ -19,7 +21,9 @@ export interface SignInParameters {
 	password: string;
 }
 
-export const signIn = async (user: SignInParameters) => {
+export const signIn = async (
+	user: SignInParameters
+): Promise<SignInParameters> => {
 	await timeoutPromise(1000);
 
 	return user;

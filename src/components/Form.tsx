@@ -4,6 +4,7 @@ import { Formik, Form as FormikForm, FormikConfig } from 'formik';
 
 import { InputField, InputFieldProps, PasswordField } from 'components';
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 export interface FormProps extends FormikConfig<any> {
 	title: string;
 	buttonText: string;
@@ -18,8 +19,7 @@ export const Form: FC<FormProps> = ({
 	title,
 	buttonText,
 	children,
-	...props
-}) => {
+}: FormProps) => {
 	return (
 		<Box
 			w={{ base: '90%', md: '400px' }}
@@ -42,12 +42,12 @@ export const Form: FC<FormProps> = ({
 								gap: '1.2em',
 							}}
 						>
-							{config.map((inputConfig) => {
+							{config.map((inputConfig, inputConfigI) => {
 								if (inputConfig.type === 'password') return <PasswordField />;
 
 								const inputProps = inputConfig as InputFieldProps;
 
-								return <InputField {...inputProps} />;
+								return <InputField key={inputConfigI} {...inputProps} />;
 							})}
 							<Button
 								colorScheme='brand__brown'

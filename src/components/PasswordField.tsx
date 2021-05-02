@@ -9,7 +9,7 @@ import {
 	IconButton,
 } from '@chakra-ui/react';
 import { ViewIcon, ViewOffIcon } from '@chakra-ui/icons';
-import { Field } from 'formik';
+import { Field, FieldProps } from 'formik';
 
 const PasswordField: FC = () => {
 	const [showPassword, setShowPassword] = useState(false);
@@ -20,9 +20,9 @@ const PasswordField: FC = () => {
 
 	return (
 		<Field name='password' validate={passwordValidate}>
-			{({ field, form }: any) => (
+			{({ field, form }: FieldProps) => (
 				<FormControl
-					isInvalid={form.errors.password && form.touched.password}
+					isInvalid={!!form.errors.password && !!form.touched.password}
 					isRequired
 				>
 					<FormLabel htmlFor='password'>Лозинка</FormLabel>
@@ -33,18 +33,15 @@ const PasswordField: FC = () => {
 							placeholder='******'
 							{...field}
 						/>
-						<InputRightElement
-							width='2.75rem'
-							children={
-								<IconButton
-									h='1.75rem'
-									size='sm'
-									onClick={() => setShowPassword(!showPassword)}
-									icon={showPassword ? <ViewOffIcon /> : <ViewIcon />}
-									aria-label='Show password'
-								/>
-							}
-						/>
+						<InputRightElement width='2.75rem'>
+							<IconButton
+								h='1.75rem'
+								size='sm'
+								onClick={() => setShowPassword(!showPassword)}
+								icon={showPassword ? <ViewOffIcon /> : <ViewIcon />}
+								aria-label='Show password'
+							/>
+						</InputRightElement>
 					</InputGroup>
 					<FormErrorMessage>{form.errors.password}</FormErrorMessage>
 				</FormControl>

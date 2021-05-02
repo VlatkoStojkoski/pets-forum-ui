@@ -20,7 +20,7 @@ export const Section: FC<SectionProps> = ({
 	icon,
 	children,
 	...props
-}) => {
+}: SectionProps) => {
 	const { isOpen, onToggle } = useDisclosure({ defaultIsOpen: true });
 
 	return (

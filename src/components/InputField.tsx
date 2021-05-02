@@ -9,7 +9,7 @@ import {
 	InputRightAddon,
 	InputAddonProps,
 } from '@chakra-ui/react';
-import { Field as FormikField } from 'formik';
+import { Field as FormikField, FieldProps } from 'formik';
 
 export interface InputFieldProps {
 	label: string;
@@ -36,9 +36,9 @@ const InputField: FC<InputFieldProps> = ({
 
 	return (
 		<FormikField name={name} validate={validate} isRequired>
-			{({ field, form }: any) => (
+			{({ field, form }: FieldProps) => (
 				<FormControl
-					isInvalid={form.errors[name] && form.touched[name]}
+					isInvalid={!!form.errors[name] && !!form.touched[name]}
 					isRequired={isFieldRequired}
 				>
 					<FormLabel htmlFor={name}>{label}</FormLabel>

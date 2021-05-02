@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { FC } from 'react';
 import { Route } from 'react-router-dom';
 
 import { Landing } from './landing';
@@ -6,7 +6,7 @@ import { Users } from './users';
 import { Dashboard } from './dashboard';
 import { Forum } from './forum';
 
-const Routes = () => {
+const Routes: FC = () => {
 	return (
 		<>
 			<Route exact path='/' component={Landing} />
@@ -16,5 +16,4 @@ const Routes = () => {
 		</>
 	);
 };
-
 export default Routes;

@@ -21,15 +21,11 @@ export interface ForumPostProps extends BoxProps {
 export const ForumPost: FC<ForumPostProps> = ({
 	config: {
 		title,
-		likes,
 		author: { displayName, username, avatar },
-		date,
-		type,
-		keywords,
 		content,
 	},
 	...props
-}) => {
+}: ForumPostProps) => {
 	return (
 		<Grid
 			templateColumns='max-content auto'

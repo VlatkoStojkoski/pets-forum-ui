@@ -2,6 +2,7 @@ import React, { FC } from 'react';
 import { ComponentWithAs, FlexProps } from '@chakra-ui/react';
 
 export interface NeuContainerProps extends FlexProps {
+	// eslint-disable-next-line @typescript-eslint/no-explicit-any
 	asContainer: ComponentWithAs<any, any>;
 }
 
@@ -9,7 +10,7 @@ export const NeuContainer: FC<NeuContainerProps> = ({
 	children,
 	asContainer: Container,
 	...props
-}) => {
+}: NeuContainerProps) => {
 	return (
 		<Container
 			boxShadow={`

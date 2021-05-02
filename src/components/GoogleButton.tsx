@@ -7,7 +7,7 @@ export interface GoogleButtonProps extends ButtonProps {
 	redirect: string;
 }
 
-const GoogleButton: FC<GoogleButtonProps> = ({ redirect, ...props }) => {
+const GoogleButton: FC<GoogleButtonProps> = (props: GoogleButtonProps) => {
 	return (
 		<Button w='full' variant='outline' type='submit' {...props}>
 			<Flex align='center' gridColumnGap={2}>

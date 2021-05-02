@@ -1,6 +1,5 @@
 import React, { FC, useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
-import { Button, Heading, VStack } from '@chakra-ui/react';
+import { Heading, VStack } from '@chakra-ui/react';
 
 import { getForumPosts, ForumPostProperties } from 'api';
 import { ForumPost } from 'components';
