@@ -24,7 +24,7 @@ export const Section: FC<SectionProps> = ({
 	const { isOpen, onToggle } = useDisclosure({ defaultIsOpen: true });
 
 	return (
-		<>
+		<Box>
 			<HStack alignItems='center' mb={3}>
 				<Box zIndex={5000}>{icon}</Box>
 				<Heading
@@ -57,16 +57,9 @@ export const Section: FC<SectionProps> = ({
 					/>
 				</Box>
 			</HStack>
-			<Collapse
-				in={isOpen}
-				style={{
-					padding: '50px',
-					margin: '-50px',
-				}}
-				{...props}
-			>
+			<Collapse in={isOpen} {...props}>
 				{children}
 			</Collapse>
-		</>
+		</Box>
 	);
 };

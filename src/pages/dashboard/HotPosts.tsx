@@ -18,13 +18,7 @@ export const HotPosts: FC = () => {
 	}, []);
 
 	return (
-		<Section
-			title='Најжешки теми'
-			icon={<HotIcon boxSize='32px' />}
-			style={{
-				maxWidth: '550px',
-			}}
-		>
+		<Section title='Најжешки теми' icon={<HotIcon boxSize='32px' />}>
 			<VStack gridRowGap={3}>
 				{(feed.length &&
 					feed.map((post, postI) => <ForumPost config={post} key={postI} />)) ||

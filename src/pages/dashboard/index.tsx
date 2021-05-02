@@ -7,16 +7,12 @@ import { HotPosts } from './HotPosts';
 
 export const Dashboard: FC = () => {
 	return (
-		<Stack px={7} pb={10} gridRowGap={7} overflow='hidden'>
-			<Box>
-				<WelcomeSection />
-			</Box>
+		<Stack px={7} pb={10} gridRowGap={7} mx='auto' maxW='600px'>
+			<WelcomeSection />
 			<Box>
 				<QuickAccess />
 			</Box>
-			<Box>
-				<HotPosts />
-			</Box>
+			<HotPosts />
 		</Stack>
 	);
 };

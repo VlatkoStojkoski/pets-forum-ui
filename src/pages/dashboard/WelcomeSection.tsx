@@ -18,7 +18,7 @@ export const WelcomeSection: FC = () => {
 	}, [boneDescRef]);
 
 	return (
-		<>
+		<Box>
 			<Heading fontSize='2xl'>Здраво Влатко</Heading>
 			<Text fontSize='md'>Добро утро!</Text>
 			<NeuContainer
@@ -57,6 +57,6 @@ export const WelcomeSection: FC = () => {
 					</Text>
 				</Box>
 			</NeuContainer>
-		</>
+		</Box>
 	);
 };
