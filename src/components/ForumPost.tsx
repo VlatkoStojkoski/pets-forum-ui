@@ -12,6 +12,7 @@ import { SmallAddIcon } from '@chakra-ui/icons';
 
 import { ForumPostProperties } from 'api';
 import { PawLike } from 'icons';
+import { Link } from 'react-router-dom';
 
 export interface ForumPostProps extends BoxProps {
 	config: ForumPostProperties;
@@ -41,14 +42,16 @@ export const ForumPost: FC<ForumPostProps> = ({
 			{...props}
 		>
 			<HStack gridColumn='2/3' gridRow='1/2'>
-				<Text
-					my='auto'
-					w='max-content'
-					isTruncated={true}
-					maxW={['14ch', '15ch', '100%']}
-				>
-					{displayName}
-				</Text>
+				<Link to={`/${username}`}>
+					<Text
+						my='auto'
+						w='max-content'
+						isTruncated={true}
+						maxW={['14ch', '15ch', '100%']}
+					>
+						{displayName}
+					</Text>
+				</Link>
 				<SmallAddIcon background='#ff9e53' color='bg' rounded='50%' my='auto' />
 			</HStack>
 			<Avatar gridColumn='1/2' gridRow='1/2' name={displayName} src={avatar} />

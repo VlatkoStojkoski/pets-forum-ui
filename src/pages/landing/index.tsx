@@ -36,7 +36,15 @@ export const Landing: FC = () => {
 					</Button>
 				</Link>
 				<Link to='/users/signin'>
-					<Button size='xl' rounded='2xl'>
+					<Button
+						size='xl'
+						rounded='2xl'
+						boxShadow={`
+							-15px 15px 25px 0 #f6cfa580,
+							15px -15px 25px 0 #ffffff
+						`}
+						bg='bg'
+					>
 						Логирај се
 					</Button>
 				</Link>

@@ -6,15 +6,21 @@ import {
 	IconButton,
 	useDisclosure,
 	Collapse,
+	CollapseProps,
 } from '@chakra-ui/react';
 import { ChevronDownIcon, ChevronUpIcon } from '@chakra-ui/icons';
 
-export interface SectionProps {
+export interface SectionProps extends CollapseProps {
 	title: string;
 	icon: ReactNode;
 }
 
-export const Section: FC<SectionProps> = ({ title, icon, children }) => {
+export const Section: FC<SectionProps> = ({
+	title,
+	icon,
+	children,
+	...props
+}) => {
 	const { isOpen, onToggle } = useDisclosure({ defaultIsOpen: true });
 
 	return (
@@ -57,6 +63,7 @@ export const Section: FC<SectionProps> = ({ title, icon, children }) => {
 					padding: '50px',
 					margin: '-50px',
 				}}
+				{...props}
 			>
 				{children}
 			</Collapse>

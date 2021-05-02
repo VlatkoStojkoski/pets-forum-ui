@@ -58,6 +58,6 @@ export default extendTheme({
 	},
 	shadows: {
 		brown__xl:
-			'0 20px 25px -5px rgba(106, 65, 57, 0.1), 0 10px 10px -5px rgba(106, 65, 57, 0.04)',
+			'0 20px 25px -5px rgba(106, 65, 57, 0.2), 0 10px 10px -5px rgba(106, 65, 57, 0.1)',
 	},
 });
