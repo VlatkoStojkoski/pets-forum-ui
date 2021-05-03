@@ -57,7 +57,13 @@ export const Section: FC<SectionProps> = ({
 					/>
 				</Box>
 			</HStack>
-			<Collapse in={isOpen} {...props}>
+			<Collapse
+				in={isOpen}
+				style={{
+					overflow: 'initial',
+				}}
+				{...props}
+			>
 				{children}
 			</Collapse>
 		</Box>

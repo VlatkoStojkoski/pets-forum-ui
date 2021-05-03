@@ -30,13 +30,7 @@ export const QuickAccess: FC = () => {
 	];
 
 	return (
-		<Section
-			title='Брз пристап'
-			icon={<LightningBolt boxSize='32px' />}
-			style={{
-				overflow: 'initial',
-			}}
-		>
+		<Section title='Брз пристап' icon={<LightningBolt boxSize='32px' />}>
 			<Grid
 				gridGap={5}
 				gridTemplateColumns='repeat(auto-fill, 110px)'
