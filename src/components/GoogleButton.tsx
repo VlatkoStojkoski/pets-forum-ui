@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
-import { Button, ButtonProps, Flex } from '@chakra-ui/react';
 
+import { Button, ButtonProps, Flex } from '@chakra-ui/react';
 import { Google } from 'icons';
 
 export interface GoogleButtonProps extends ButtonProps {

@@ -1,8 +1,9 @@
 import React, { FC } from 'react';
-import { Grid, Stack, Text } from '@chakra-ui/react';
 
-import { LightningBolt, Poison, PawEmergency, Rocket, Person } from 'icons';
+import { Grid, Stack, Text } from '@chakra-ui/react';
 import { NeuContainer } from 'components';
+import { LightningBolt, Poison, PawEmergency, Rocket, Person } from 'icons';
+
 import { Section } from './Section';
 
 export const QuickAccess: FC = () => {

@@ -1,4 +1,6 @@
 import React, { FC, useState } from 'react';
+
+import { ViewIcon, ViewOffIcon } from '@chakra-ui/icons';
 import {
 	FormErrorMessage,
 	FormControl,
@@ -8,7 +10,6 @@ import {
 	InputRightElement,
 	IconButton,
 } from '@chakra-ui/react';
-import { ViewIcon, ViewOffIcon } from '@chakra-ui/icons';
 import { Field, FieldProps } from 'formik';
 
 const PasswordField: FC = () => {

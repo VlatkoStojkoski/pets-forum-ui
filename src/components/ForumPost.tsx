@@ -1,4 +1,6 @@
 import React, { FC } from 'react';
+
+import { SmallAddIcon } from '@chakra-ui/icons';
 import {
 	Avatar,
 	Box,
@@ -10,11 +12,9 @@ import {
 	Text,
 	VStack,
 } from '@chakra-ui/react';
-import { SmallAddIcon } from '@chakra-ui/icons';
-import millify from 'millify';
-
 import { ForumPostProperties } from 'api';
 import { PawLike } from 'icons';
+import millify from 'millify';
 import { Link } from 'react-router-dom';
 
 export interface ForumPostProps extends BoxProps {

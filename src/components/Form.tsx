@@ -1,8 +1,9 @@
 import React, { FC, ReactNode } from 'react';
+
 import { Box, Heading, Button } from '@chakra-ui/react';
+import { InputField, InputFieldProps, PasswordField } from 'components';
 import { Formik, Form as FormikForm, FormikConfig } from 'formik';
 
-import { InputField, InputFieldProps, PasswordField } from 'components';
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 export interface FormProps extends FormikConfig<any> {

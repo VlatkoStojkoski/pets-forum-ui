@@ -1,9 +1,10 @@
 import React, { FC } from 'react';
-import { RouteComponentProps } from 'react-router-dom';
-import { FormikHelpers } from 'formik';
 
-import { GoogleButton, Form } from 'components';
 import { signUp, SignUpParameters } from 'api';
+import { GoogleButton, Form } from 'components';
+import { FormikHelpers } from 'formik';
+import { RouteComponentProps } from 'react-router-dom';
+
 
 export const SignUp: FC<RouteComponentProps> = ({
 	history,

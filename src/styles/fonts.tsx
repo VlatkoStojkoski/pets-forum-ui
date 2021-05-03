@@ -1,4 +1,5 @@
 import React, { FC } from 'react';
+
 import { Global } from '@emotion/react';
 
 const Fonts: FC = () => (

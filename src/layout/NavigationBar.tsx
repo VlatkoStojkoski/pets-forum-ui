@@ -1,8 +1,8 @@
 import React, { FC } from 'react';
-import { Link } from 'react-router-dom';
-import { Flex, Heading } from '@chakra-ui/react';
 
+import { Flex, Heading } from '@chakra-ui/react';
 import { Brand } from 'icons';
+import { Link } from 'react-router-dom';
 
 export const NavigationBar: FC = () => {
 	return (

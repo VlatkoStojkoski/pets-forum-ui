@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
-import { Center, Button, Stack, Heading, Text, Box } from '@chakra-ui/react';
 
+import { Center, Button, Stack, Heading, Text, Box } from '@chakra-ui/react';
 import { Dog, Magnifier } from 'icons';
 import { Link } from 'react-router-dom';
 

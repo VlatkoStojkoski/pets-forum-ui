@@ -1,11 +1,12 @@
 import React, { FC, useEffect, useState } from 'react';
-import { Button, VStack } from '@chakra-ui/react';
 
+import { Button, VStack } from '@chakra-ui/react';
 import { getForumPosts, ForumPostProperties } from 'api';
 import { ForumPost } from 'components';
 import { HotIcon } from 'icons';
-import { Section } from './Section';
 import { Link } from 'react-router-dom';
+
+import { Section } from './Section';
 
 export const HotPosts: FC = () => {
 	const [feed, setFeed] = useState<ForumPostProperties[]>([]);

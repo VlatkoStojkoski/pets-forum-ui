@@ -1,4 +1,6 @@
 import React, { FC, ReactNode } from 'react';
+
+import { ChevronDownIcon, ChevronUpIcon } from '@chakra-ui/icons';
 import {
 	Box,
 	Heading,
@@ -8,7 +10,6 @@ import {
 	Collapse,
 	CollapseProps,
 } from '@chakra-ui/react';
-import { ChevronDownIcon, ChevronUpIcon } from '@chakra-ui/icons';
 
 export interface SectionProps extends CollapseProps {
 	title: string;

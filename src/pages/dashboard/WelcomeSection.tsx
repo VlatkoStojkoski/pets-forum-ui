@@ -1,9 +1,9 @@
 import React, { FC, useEffect, useRef, useState } from 'react';
-import ResizeObserver from 'resize-observer-polyfill';
-import { Box, Flex, Heading, Text } from '@chakra-ui/react';
 
-import { BoneButton } from 'icons';
+import { Box, Flex, Heading, Text } from '@chakra-ui/react';
 import { NeuContainer } from 'components';
+import { BoneButton } from 'icons';
+import ResizeObserver from 'resize-observer-polyfill';
 
 export const WelcomeSection: FC = () => {
 	const boneDescRef = useRef<HTMLDivElement>(null);

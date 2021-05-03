@@ -1,8 +1,8 @@
 import React, { FC } from 'react';
-import { Box } from '@chakra-ui/react';
 
-import Routes from 'pages/Routes';
+import { Box } from '@chakra-ui/react';
 import { NavigationBar } from 'layout';
+import Routes from 'pages/Routes';
 
 const App: FC = () => {
 	return (

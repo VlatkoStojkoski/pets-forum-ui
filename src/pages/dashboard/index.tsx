@@ -1,9 +1,10 @@
 import React, { FC } from 'react';
+
 import { Box, Stack } from '@chakra-ui/react';
 
-import { WelcomeSection } from './WelcomeSection';
-import { QuickAccess } from './QuickAccess';
 import { HotPosts } from './HotPosts';
+import { QuickAccess } from './QuickAccess';
+import { WelcomeSection } from './WelcomeSection';
 
 export const Dashboard: FC = () => {
 	return (
