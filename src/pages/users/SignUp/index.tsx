@@ -1,19 +1,22 @@
 import React, { FC } from 'react';
+import { RouteComponentProps } from 'react-router-dom';
 import { FormikHelpers } from 'formik';
 
 import { GoogleButton, Form } from 'components';
 import { signUp, SignUpParameters } from 'api';
 
-export const SignUp: FC = () => {
+export const SignUp: FC<RouteComponentProps> = ({
+	history,
+}: RouteComponentProps) => {
 	const handleSubmit = async (
 		values: SignUpParameters,
 		actions: FormikHelpers<SignUpParameters>
 	) => {
-		actions.setSubmitting(true);
-
 		await signUp(values);
 
 		actions.setSubmitting(false);
+
+		history.push('/dashboard');
 	};
 
 	return (
