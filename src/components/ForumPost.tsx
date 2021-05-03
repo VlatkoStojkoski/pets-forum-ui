@@ -1,10 +1,13 @@
-import React, { FC } from 'react';
+import React, { FC, useState } from 'react';
 import {
 	Avatar,
+	Box,
 	BoxProps,
 	Grid,
 	Heading,
 	HStack,
+	Icon,
+	IconButton,
 	Text,
 	VStack,
 } from '@chakra-ui/react';
@@ -26,12 +29,14 @@ export const ForumPost: FC<ForumPostProps> = ({
 	},
 	...props
 }: ForumPostProps) => {
+	const [liked, setLiked] = useState(false);
+
 	return (
 		<Grid
 			templateColumns='max-content auto'
 			templateRows='max-content minmax(100px, auto)'
 			w='100%'
-			bg='#ffead5'
+			bg='rgb(255, 234, 213)'
 			padding={3}
 			rounded='lg'
 			columnGap={3}
@@ -44,25 +49,58 @@ export const ForumPost: FC<ForumPostProps> = ({
 						w='max-content'
 						isTruncated={true}
 						maxW={['14ch', '15ch', '100%']}
+						fontWeight='550'
 					>
 						{displayName}
 					</Text>
 				</Link>
 				<SmallAddIcon background='#ff9e53' color='bg' rounded='50%' my='auto' />
 			</HStack>
-			<Avatar gridColumn='1/2' gridRow='1/2' name={displayName} src={avatar} />
-			<PawLike
+			<Avatar
 				gridColumn='1/2'
-				gridRow='2/3'
-				boxSize='2rem'
-				color='gray.400'
+				gridRow='1/2'
+				name={displayName}
+				src={avatar}
 				placeSelf='center'
 			/>
+			<Grid placeSelf='center' placeItems='center'>
+				<Text textAlign='center' fontWeight={liked ? '700' : 'normal'}>
+					60K
+				</Text>
+				<IconButton
+					aria-label='Like button'
+					variant='unstyled'
+					_focus={{ outline: 'none' }}
+					onClick={() => setLiked(!liked)}
+					icon={
+						<PawLike
+							gridColumn='1/2'
+							gridRow='2/3'
+							boxSize='2rem'
+							color={`${liked ? 'accent' : 'gray'}.400`}
+							_hover={{
+								color: `${liked ? 'accent' : 'gray'}.500`,
+							}}
+							placeSelf='center'
+						/>
+					}
+				/>
+			</Grid>
 			<VStack gridColumn='2/3' gridRow='2/3' alignItems='normal'>
 				<Heading fontSize='xl'>{title}</Heading>
-				<Text fontSize='sm' noOfLines={3}>
-					{content}
-				</Text>
+				<Box pos='relative'>
+					<Text fontSize='sm' noOfLines={3} zIndex={-5}>
+						{content}
+					</Text>
+					<Box
+						zIndex={5}
+						w='100%'
+						h='100%'
+						pos='absolute'
+						top={0}
+						bg='linear-gradient(rgba(0, 0, 0, 0), rgb(255, 234, 213))'
+					/>
+				</Box>
 			</VStack>
 		</Grid>
 	);
