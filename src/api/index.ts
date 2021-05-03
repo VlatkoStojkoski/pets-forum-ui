@@ -1,3 +1,5 @@
+import { nanoid } from 'nanoid';
+
 const timeoutPromise = (ms: number) =>
 	new Promise((res) => setTimeout(res, ms));
 
@@ -45,6 +47,8 @@ export interface ForumPostProperties {
 	type: 'image' | 'video' | 'text';
 	keywords: string[];
 	content: string;
+	liked: boolean;
+	id: string;
 }
 
 const randomPost = async (): Promise<ForumPostProperties> => {
@@ -52,7 +56,8 @@ const randomPost = async (): Promise<ForumPostProperties> => {
 
 	return {
 		title: 'Наслов',
-		likes: Math.floor(Math.random() * 6969),
+		likes: Math.floor(Math.random() * 1000),
+		liked: !!Math.floor(Math.random() * 2),
 		author: {
 			displayName: 'Марта Стојкоска',
 			username: 'super_martha_69',
@@ -65,6 +70,7 @@ const randomPost = async (): Promise<ForumPostProperties> => {
 		keywords: ['key1', 'word2', 'lol1'],
 		content:
 			'lorem ipsum dolor1 sit amet. lorem ipsum dolor sit amet. lorem ipsum dolor sit amet. lorem ipsum dolor sit amet. lorem ipsum dolor sit amet. lorem ipsum dolor sit amet. lorem ipsum dolor sit amet. lorem ipsum dolor sit amet.lorem ipsum dolor sit amet. lorem ipsum dolor sit amet. lorem ipsum dolor sit amet. lorem ipsum dolor sit amet. lorem ipsum dolor sit amet. lorem ipsum dolor sit amet. lorem ipsum dolor sit amet.',
+		id: nanoid(),
 	};
 };
 

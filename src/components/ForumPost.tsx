@@ -1,4 +1,4 @@
-import React, { FC, useState } from 'react';
+import React, { FC } from 'react';
 import {
 	Avatar,
 	Box,
@@ -6,12 +6,12 @@ import {
 	Grid,
 	Heading,
 	HStack,
-	Icon,
 	IconButton,
 	Text,
 	VStack,
 } from '@chakra-ui/react';
 import { SmallAddIcon } from '@chakra-ui/icons';
+import millify from 'millify';
 
 import { ForumPostProperties } from 'api';
 import { PawLike } from 'icons';
@@ -19,6 +19,7 @@ import { Link } from 'react-router-dom';
 
 export interface ForumPostProps extends BoxProps {
 	config: ForumPostProperties;
+	onLike(id: string): void;
 }
 
 export const ForumPost: FC<ForumPostProps> = ({
@@ -26,11 +27,13 @@ export const ForumPost: FC<ForumPostProps> = ({
 		title,
 		author: { displayName, username, avatar },
 		content,
+		likes,
+		liked,
+		id,
 	},
+	onLike,
 	...props
 }: ForumPostProps) => {
-	const [liked, setLiked] = useState(false);
-
 	return (
 		<Grid
 			templateColumns='max-content auto'
@@ -65,13 +68,16 @@ export const ForumPost: FC<ForumPostProps> = ({
 			/>
 			<Grid placeSelf='center' placeItems='center'>
 				<Text textAlign='center' fontWeight={liked ? '700' : 'normal'}>
-					60K
+					{millify(likes, {
+						precision: 1,
+						decimalSeparator: '.',
+					})}
 				</Text>
 				<IconButton
 					aria-label='Like button'
 					variant='unstyled'
 					_focus={{ outline: 'none' }}
-					onClick={() => setLiked(!liked)}
+					onClick={() => onLike(id)}
 					icon={
 						<PawLike
 							gridColumn='1/2'
