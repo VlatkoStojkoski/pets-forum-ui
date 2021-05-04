@@ -5,7 +5,6 @@ import { GoogleButton, Form } from 'components';
 import { FormikHelpers } from 'formik';
 import { RouteComponentProps } from 'react-router-dom';
 
-
 export const SignIn: FC<RouteComponentProps> = ({
 	history,
 }: RouteComponentProps) => {
@@ -23,8 +22,8 @@ export const SignIn: FC<RouteComponentProps> = ({
 	return (
 		<>
 			<Form
-				title='Регистрација'
-				buttonText='Регистрирај се'
+				title='Логирање'
+				buttonText='Логирај се'
 				initialValues={
 					{
 						username: '',
