@@ -1,10 +1,10 @@
 import React, { FC, useState, useEffect } from 'react';
 
-import { getForumPosts, ForumPostProperties, ForumPostsQuery } from 'api';
+import { getForumPosts, ForumPostProperties, ForumGetQuery } from 'api';
 import { ForumPost } from 'components';
 
 export interface ForumPostsProps {
-	query?: ForumPostsQuery;
+	query?: ForumGetQuery;
 }
 
 export const ForumPosts: FC<ForumPostsProps> = ({ query }: ForumPostsProps) => {
@@ -32,7 +32,7 @@ export const ForumPosts: FC<ForumPostsProps> = ({ query }: ForumPostsProps) => {
 		})();
 	}, []);
 
-	const updatePostsOrded = () => setPostsOrder([...postsOrder]);
+	const updatePostsOrder = () => setPostsOrder([...postsOrder]);
 
 	const handleLike = (id: string) => {
 		const post = posts.get(id);
@@ -45,7 +45,7 @@ export const ForumPosts: FC<ForumPostsProps> = ({ query }: ForumPostsProps) => {
 			likes: post.likes + (post.liked ? -1 : 1),
 		});
 
-		updatePostsOrded();
+		updatePostsOrder();
 	};
 
 	return (

@@ -1,32 +1,27 @@
 import React, { FC } from 'react';
 
-import { ChatIcon, SmallAddIcon } from '@chakra-ui/icons';
+import { SmallAddIcon } from '@chakra-ui/icons';
 import {
 	Avatar,
-	Box,
 	BoxProps,
 	Grid,
-	Heading,
 	HStack,
 	IconButton,
 	Text,
 	VStack,
 } from '@chakra-ui/react';
-import { ForumPostProperties } from 'api';
+import { ForumCommentProperties } from 'api';
 import { PawLike } from 'icons';
 import millify from 'millify';
 import { Link } from 'react-router-dom';
 
-export interface ForumPostProps extends BoxProps {
-	config: ForumPostProperties;
+export interface ForumCommentProps extends BoxProps {
+	config: ForumCommentProperties;
 	onLike(id: string): void;
-	showComments?: boolean;
-	showAll?: boolean;
 }
 
-export const ForumPost: FC<ForumPostProps> = ({
+export const ForumComment: FC<ForumCommentProps> = ({
 	config: {
-		title,
 		author: { displayName, username, avatar },
 		content,
 		likes,
@@ -34,16 +29,14 @@ export const ForumPost: FC<ForumPostProps> = ({
 		id,
 	},
 	onLike,
-	showComments = true,
-	showAll = false,
 	...props
-}: ForumPostProps) => {
+}: ForumCommentProps) => {
 	return (
 		<Grid
 			templateColumns='max-content auto'
 			templateRows='max-content minmax(100px, auto) auto'
 			w='100%'
-			bg='brand.150'
+			bg='brand.200'
 			padding={3}
 			rounded='lg'
 			columnGap={3}
@@ -103,39 +96,8 @@ export const ForumPost: FC<ForumPostProps> = ({
 				/>
 			</Grid>
 			<VStack gridColumn='2/3' gridRow='2/3' alignItems='normal'>
-				<Heading fontSize='xl'>{title}</Heading>
-				<Box pos='relative'>
-					<Text fontSize='sm' {...(!showAll && { noOfLines: 4 })} zIndex={-5}>
-						{content}
-					</Text>
-					{!showAll && (
-						<Box
-							zIndex={5}
-							w='100%'
-							h='100%'
-							pos='absolute'
-							top={0}
-							bg='linear-gradient(rgba(0, 0, 0, 0), rgb(255, 234, 213))'
-						/>
-					)}
-				</Box>
+				<Text fontSize='sm'>{content}</Text>
 			</VStack>
-			{showComments && (
-				<Box
-					gridColumn='1/3'
-					gridRow='3/4'
-					color='brand__brown.800'
-					fontWeight='600'
-					placeSelf='center'
-				>
-					<Link to={`/forum/posts/${id}`}>
-						<HStack>
-							<ChatIcon boxSize='16px' />
-							<Text>Коментари</Text>
-						</HStack>
-					</Link>
-				</Box>
-			)}
 		</Grid>
 	);
 };

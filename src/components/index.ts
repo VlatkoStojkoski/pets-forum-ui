@@ -5,3 +5,5 @@ export * from './Form';
 export * from './NeuContainer';
 export * from './ForumPost';
 export * from './ForumPosts';
+export * from './ForumComment';
+export * from './ForumComments';
