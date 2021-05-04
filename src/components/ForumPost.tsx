@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
 
-import { SmallAddIcon } from '@chakra-ui/icons';
+import { ChatIcon, SmallAddIcon } from '@chakra-ui/icons';
 import {
 	Avatar,
 	Box,
@@ -37,9 +37,9 @@ export const ForumPost: FC<ForumPostProps> = ({
 	return (
 		<Grid
 			templateColumns='max-content auto'
-			templateRows='max-content minmax(100px, auto)'
+			templateRows='max-content minmax(100px, auto) auto'
 			w='100%'
-			bg='rgb(255, 234, 213)'
+			bg='brand.150'
 			padding={3}
 			rounded='lg'
 			columnGap={3}
@@ -57,7 +57,7 @@ export const ForumPost: FC<ForumPostProps> = ({
 						{displayName}
 					</Text>
 				</Link>
-				<SmallAddIcon background='#ff9e53' color='bg' rounded='50%' my='auto' />
+				<SmallAddIcon bg='brand.800' color='bg' rounded='50%' my='auto' />
 			</HStack>
 			<Avatar
 				gridColumn='1/2'
@@ -108,6 +108,20 @@ export const ForumPost: FC<ForumPostProps> = ({
 					/>
 				</Box>
 			</VStack>
+			<Box
+				gridColumn='1/3'
+				gridRow='3/4'
+				color='brand__brown.800'
+				fontWeight='600'
+				placeSelf='center'
+			>
+				<Link to={`/forum/posts/${id}`}>
+					<HStack>
+						<ChatIcon boxSize='16px' />
+						<Text>Коментари</Text>
+					</HStack>
+				</Link>
+			</Box>
 		</Grid>
 	);
 };

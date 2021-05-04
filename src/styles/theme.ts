@@ -28,6 +28,18 @@ export default extendTheme({
 			800: '#1f35ff',
 			900: '#0a23ff',
 		},
+		brand: {
+			100: '#fff6ee',
+			150: '#ffead5',
+			200: '#ffe0c2',
+			300: '#ffd6ad',
+			400: '#ffcc99',
+			500: '#ffc285',
+			600: '#ffb870',
+			700: '#ffad5c',
+			800: '#ffa347',
+			900: '#ff9933',
+		},
 		brand__brown: {
 			30: '#dbc2bd',
 			40: '#d4b6af',

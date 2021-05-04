@@ -32,7 +32,7 @@ export const signIn = async (
 };
 
 export interface ForumPostsQuery {
-	limit: number;
+	limit?: number;
 }
 
 export interface ForumPostProperties {
