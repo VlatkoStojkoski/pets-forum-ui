@@ -1,21 +1,13 @@
-import React, { FC, useEffect, useRef, useState } from 'react';
+import React, { FC, useRef } from 'react';
 
 import { Box, Flex, Heading, Text } from '@chakra-ui/react';
 import { NeuContainer } from 'components';
+import { useObserveHeight } from 'hooks';
 import { BoneButton } from 'icons';
-import ResizeObserver from 'resize-observer-polyfill';
 
 export const WelcomeSection: FC = () => {
 	const boneDescRef = useRef<HTMLDivElement>(null);
-	const [boneDescHeight, setBoneDescHeight] = useState(0);
-
-	useEffect(() => {
-		if (boneDescRef.current) {
-			new ResizeObserver(() =>
-				setBoneDescHeight(boneDescRef.current?.offsetHeight || 0)
-			).observe(boneDescRef.current);
-		}
-	}, [boneDescRef]);
+	const boneDescHeight = useObserveHeight(boneDescRef);
 
 	return (
 		<Box>
