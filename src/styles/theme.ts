@@ -18,6 +18,9 @@ export default extendTheme({
 		bg: '#fff6ee',
 		bgRGB: '255, 246, 238',
 		accent: {
+			30: '#ebedff',
+			40: '#d6dbff',
+			50: '#c2c9ff',
 			100: '#adb6ff',
 			200: '#99a3ff',
 			300: '#8591ff',

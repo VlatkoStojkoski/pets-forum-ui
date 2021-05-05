@@ -8,9 +8,7 @@ const App: FC = () => {
 	return (
 		<Box bg='bg' minH='100vh' minW='100%'>
 			<NavigationBar />
-			<Box py={5}>
-				<Routes />
-			</Box>
+			<Routes />
 		</Box>
 	);
 };
