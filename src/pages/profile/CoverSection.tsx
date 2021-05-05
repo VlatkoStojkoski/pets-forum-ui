@@ -1,4 +1,4 @@
-import React, { FC, useState } from 'react';
+import React, { FC, useRef, useState } from 'react';
 
 import {
 	AspectRatio,
@@ -10,9 +10,12 @@ import {
 	Image,
 	Text,
 } from '@chakra-ui/react';
+import { useObserveHeight } from 'hooks';
 
 export const CoverSection: FC = () => {
 	const [isBioExtended, setIsBioExtended] = useState(false);
+	const bioRef = useRef(null);
+	const bioHeight = useObserveHeight(bioRef);
 
 	return (
 		<>
@@ -71,6 +74,7 @@ export const CoverSection: FC = () => {
 								top={0}
 								py={2}
 								borderBottomRadius='xl'
+								ref={bioRef}
 							>
 								<Text
 									fontSize='xs'
@@ -94,6 +98,7 @@ export const CoverSection: FC = () => {
 					</Box>
 				</>
 			</AspectRatio>
+			<Box h={`${bioHeight}px`} />
 		</>
 	);
 };
