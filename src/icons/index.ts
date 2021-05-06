@@ -10,3 +10,5 @@ export * from './Rocket';
 export * from './Person';
 export * from './HotIcon';
 export * from './PawLike';
+export * from './NewsFeed';
+export * from './CatAndDog';
