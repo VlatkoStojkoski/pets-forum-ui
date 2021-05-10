@@ -164,7 +164,7 @@ const randomPet = async (
 			name: name.firstName(),
 			bio: lorem.sentence(),
 			gender: datatype.boolean() ? 'male' : 'female',
-			breed: lorem.words(2),
+			breed: lorem.word(),
 			animal: lorem.word(),
 			birthday: datatype.datetime({ max: Date.now() }),
 			date: datatype.datetime(),
