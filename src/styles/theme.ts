@@ -2,6 +2,8 @@ import { extendTheme } from '@chakra-ui/react';
 import { createBreakpoints } from '@chakra-ui/theme-tools';
 
 export default extendTheme({
+	initialColorMode: 'light',
+	useSystemColorMode: false,
 	breakpoints: createBreakpoints({
 		xs: '25em',
 		sm: '30em',
